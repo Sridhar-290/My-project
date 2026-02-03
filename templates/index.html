@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianAI | Fake Face Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="glitch" data-text="GUARDIAN">GUARDIAN</span><span class="ai">AI</span>
+            </div>
+            <div class="status-badge">
+                <span class="pulse"></span> LIVE MONITORING
+            </div>
+        </header>
+
+        <main>
+            <div class="video-section">
+                <div class="video-container">
+                    <img src="/video_feed" id="video-stream" alt="Video Stream">
+                    <div class="scan-line"></div>
+                    <div class="corners">
+                        <span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+                <div class="verdict-container" id="verdict-card">
+                    <h2 id="verdict-text">INITIALIZING...</h2>
+                    <div class="confidence-bar">
+                        <div id="confidence-fill" style="width: 0%"></div>
+                    </div>
+                    <p>Confidence Score: <span id="confidence-value">0%</span></p>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <div class="panel metrics-panel">
+                    <h3>REAL-TIME METRICS</h3>
+                    <div class="metric-item">
+                        <label>Liveness (Blink)</label>
+                        <div class="mini-bar"><div id="metric-liveness" style="width: 0%"></div></div>
+                    </div>
+                    <div class="metric-item">
+                        <label>Texture Consistency</label>
+                        <div class="mini-bar"><div id="metric-texture" style="width: 0%"></div></div>
+                    </div>
+                    <div class="metric-item">
+                        <label>Structural Stability</label>
+                        <div class="mini-bar"><div id="metric-stability" style="width: 0%"></div></div>
+                    </div>
+                </div>
+
+                <div class="panel log-panel">
+                    <h3>AUDIT LOG</h3>
+                    <div id="audit-log" class="log-content">
+                        <p class="log-entry system">System initialized...</p>
+                        <p class="log-entry system">Awaiting face mesh synchronization...</p>
+                    </div>
+                </div>
+
+                <div class="panel info-panel">
+                    <h3>SECURITY INTEL</h3>
+                    <p>Analyzing facial landmarks for deepfake artifacts, skin texture variance, and liveness biometrics.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
